@@ -1,0 +1,35 @@
+package org.example.Controller;
+
+import org.example.Models.Game;
+import org.example.Models.GameState;
+import org.example.Models.Player;
+
+import java.util.List;
+
+public class GameController {
+    //startGame, makeMove, getGameStatus, getWinner
+
+
+    public Game startGame(int dimension, List<Player> players){
+        Game game=Game.getBuilder()
+                      .setDimension(dimension)
+                      .setPlayers(players)
+                      .build();
+        return game;
+    }
+
+    public void makeMove(Game game){
+        game.makeMove();
+    }
+
+    public GameState getGameState(Game game){
+        return game.getGameState();
+    }
+
+    public Player getWinner(Game game){
+        Player winner=game.getWinner();
+        if(winner==null)
+            throw new RuntimeException("No Winner found ");
+        return winner;
+    }
+}
