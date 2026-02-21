@@ -8,5 +8,11 @@ import lombok.Setter;
 public class Move {
     private Cell cell;
     private Player player;
-    private PlayerType playerType;
+
+    public Move(Cell cell, Player player) {
+        this.cell = cell;
+        this.player = player;
+    }
+
+
 }

@@ -7,5 +7,9 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Symbol {
-    private char symbol;
+    private char ch;
+
+    public Symbol(char ch){
+        this.ch=ch;
+    }
 }

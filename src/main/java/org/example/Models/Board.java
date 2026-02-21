@@ -24,4 +24,18 @@ public class Board {
             }
         }
     }
+
+    public void displayBoard(){
+        for(List<Cell> cellList: cells){
+            for (Cell cell:cellList){
+                if(cell.isEmpty()){
+                    System.out.print("| |");
+                }
+                else{
+                    System.out.print("|"+cell.getPlayer().getSymbol().getCh()+"|");
+                }
+            }
+            System.out.println();
+        }
+    }
 }

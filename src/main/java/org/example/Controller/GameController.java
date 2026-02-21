@@ -1,8 +1,7 @@
 package org.example.Controller;
 
-import org.example.Models.Game;
-import org.example.Models.GameState;
-import org.example.Models.Player;
+import org.example.Models.*;
+import org.example.exceptions.InvalidMoveException;
 
 import java.util.List;
 
@@ -18,7 +17,7 @@ public class GameController {
         return game;
     }
 
-    public void makeMove(Game game){
+    public void makeMove(Game game) throws InvalidMoveException {
         game.makeMove();
     }
 
@@ -31,5 +30,10 @@ public class GameController {
         if(winner==null)
             throw new RuntimeException("No Winner found ");
         return winner;
+    }
+
+
+    public void getBoard(Game game){
+        game.displayBoard();
     }
 }
